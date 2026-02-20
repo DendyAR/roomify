@@ -30,37 +30,33 @@ const Navbar = () => {
                         <Box className="logo" />
                         <span className="name">Roomify</span>
                     </div>
-
                     <ul className="links">
                         <a href="http://" target="_blank" rel="noopener noreferrer">Product</a>
                         <a href="http://" target="_blank" rel="noopener noreferrer">Pricing</a>
                         <a href="http://" target="_blank" rel="noopener noreferrer">Community</a>
                         <a href="http://" target="_blank" rel="noopener noreferrer">Enterprise</a>
                     </ul>
+                </div>
 
-                    <div className="actions">
-                        {isSignedIn ? (
-                            <>
-                                <span className="greeting">
-                                    {userName ? `Hi ${userName}` : "Sign In"}
-                                </span>
+                <div className="actions">
+                    {isSignedIn ? (
+                        <>
+                            <span className="greeting">
+                                {userName ? `Hi ${userName}` : "Sign In"}
+                            </span>
 
-                                <Button size="sm" onClick={handleAuthClick} className="btn">
-                                    Log Out
-                                </Button>
-                            </>
-                        ) : (
-                            <>
-                                <Button onClick={handleAuthClick} size="sm" variant="ghost">
-                                    Log In
-                                </Button>
-                                <a href="#upload" className="cta">Get Started</a>
-                            </>
-                        )}
-
-
-
-                    </div>
+                            <Button size="sm" onClick={handleAuthClick} className="btn">
+                                Log Out
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Button onClick={handleAuthClick} size="sm" variant="ghost">
+                                Log In
+                            </Button>
+                            <a href="#upload" className="cta">Get Started</a>
+                        </>
+                    )}
                 </div>
             </nav>
         </header>

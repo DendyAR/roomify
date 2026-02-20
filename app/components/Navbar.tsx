@@ -6,7 +6,20 @@ const Navbar = () => {
     const { isSignedIn, userName, signIn, signOut } = useOutletContext<AuthContext>()
 
     const handleAuthClick = async () => {
+        if (isSignedIn) {
+            try {
+                await signOut()
+            } catch (error) {
+                console.error(`Puter Sign Out failed: ${error}`)
+            }
+            return
+        }
 
+        try {
+            await signIn()
+        } catch (error) {
+            console.error(`Puter Sign In failed: ${error}`)
+        }
     }
 
     return (
